@@ -8,7 +8,9 @@ const GlobalProvider = ({ children }) => {
     let loggedOut = true;
     // "proxy": "http://127.0.0.1:7000/",
     let authUrl =
-        process.env.NODE_ENV === "development" ? "http://127.0.0.1:7000" : "";
+        process.env.NODE_ENV === "development"
+            ? "http://127.0.0.1:7000"
+            : "https://wahala-movie.herokuapp.com/";
     const [searchQuery, setSearchQuery] = useState("");
 
     return (
