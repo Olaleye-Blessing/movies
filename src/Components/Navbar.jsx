@@ -10,7 +10,7 @@ import NavAuthUser from "./NavAuthUser";
 import useFetch from "../hooks/useFetch";
 
 const Navbar = () => {
-    let { setSearchQuery } = useGlobalContext();
+    let { setSearchQuery, authUrl } = useGlobalContext();
 
     let history = useHistory();
     let pathname = history.location.pathname;
@@ -82,7 +82,7 @@ const Navbar = () => {
         data: user,
         error,
         isPending: loading,
-    } = useFetch("/authentication/isLogin");
+    } = useFetch(`${authUrl}/authentication/isLogin`);
 
     const checkUserIsLoggedIn = () => {
         console.log("loggedOut.....");

@@ -1,9 +1,11 @@
 import { NavLink, useHistory } from "react-router-dom";
+import { useGlobalContext } from "../contexts/GlobalContext";
 import { fetchData } from "../utility/fetchData";
 
 const NavAuthUser = ({ user, id }) => {
     // console.log({ user, id });
     let history = useHistory();
+    let { authUrl } = useGlobalContext();
 
     console.log(history);
 
@@ -16,7 +18,7 @@ const NavAuthUser = ({ user, id }) => {
             </li>
             <li className={`nav__link`}>
                 <NavLink
-                    to="/authentication/logout"
+                    to={`${authUrl}/authentication/logout`}
                     className={`btn btn-link btn-border btn-extra`}
                 >
                     logout

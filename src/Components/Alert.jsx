@@ -4,7 +4,7 @@ const Alert = ({ type, msg, removeAlert, submitting }) => {
     useEffect(() => {
         let timeout = setTimeout(() => {
             removeAlert();
-        }, 4000);
+        }, 6000);
         return () => clearTimeout(timeout);
 
         // eslint-disable-next-line react-hooks/exhaustive-deps

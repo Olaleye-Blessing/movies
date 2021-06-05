@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { useHistory } from "react-router";
+import { useGlobalContext } from "../contexts/GlobalContext";
 import excludeKeys from "../utility/excludeKeys";
 
 const useSignUpForm = (validate) => {
     let history = useHistory();
+    let { authUrl } = useGlobalContext();
+
     const [values, setValues] = useState({
         firstName: "",
         lastName: "",
@@ -70,7 +73,7 @@ const useSignUpForm = (validate) => {
 
         const sign = async () => {
             try {
-                let req = await fetch(`/authentication/signup`, {
+                let req = await fetch(`${authUrl}/authentication/signup`, {
                     method: "POST",
                     body,
                     headers: {

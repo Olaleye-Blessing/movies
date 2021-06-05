@@ -7,9 +7,11 @@ import FormBtn from "../Components/Form/FormBtn";
 import { Link, useHistory } from "react-router-dom";
 import LoaderIndicatorSmall from "../Components/LoaderIndicatorSmall";
 import Alert from "../Components/Alert";
+import { useGlobalContext } from "../contexts/GlobalContext";
 
 const Login = () => {
     let history = useHistory();
+    let { authUrl } = useGlobalContext();
 
     const [disabled, setDisabled] = useState(true);
 
@@ -78,7 +80,7 @@ const Login = () => {
 
         const login = async () => {
             try {
-                let req = await fetch(`/authentication/login`, {
+                let req = await fetch(`${authUrl}/authentication/login`, {
                     method: "POST",
                     body,
                     headers: {

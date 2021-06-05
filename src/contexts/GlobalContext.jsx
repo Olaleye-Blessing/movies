@@ -6,6 +6,9 @@ const GlobalProvider = ({ children }) => {
     let baseUrl = `https://api.themoviedb.org/3`;
     let key = "651ef57b1ca582995fef27ff08df6717";
     let loggedOut = true;
+    // "proxy": "http://127.0.0.1:7000/",
+    let authUrl =
+        process.env.NODE_ENV === "development" ? "http://127.0.0.1:7000" : "";
     const [searchQuery, setSearchQuery] = useState("");
 
     return (
@@ -16,6 +19,7 @@ const GlobalProvider = ({ children }) => {
                 setSearchQuery,
                 baseUrl,
                 loggedOut,
+                authUrl,
             }}
         >
             {children}
