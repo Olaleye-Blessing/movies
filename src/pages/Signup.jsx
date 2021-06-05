@@ -14,6 +14,7 @@ import ConfirmPage from "../Components/Form/ConfirmPage";
 import { Link } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import LoaderIndicatorSmall from "../Components/LoaderIndicatorSmall";
+import Alert from "../Components/Alert";
 // import { useGlobalContext } from "../contexts/GlobalContext";
 
 const SignUp = () => {
@@ -47,6 +48,8 @@ const SignUp = () => {
         touched,
         handleKeyDown,
         submitting,
+        alert,
+        showAlert,
     } = useSignUpForm(validateInfo);
 
     const {
@@ -162,7 +165,7 @@ const SignUp = () => {
                                         "submit"
                                     )
                                 }
-                                disabled={false}
+                                disabled={submitting}
                                 handleClick={null}
                             />
                         </div>
@@ -204,6 +207,13 @@ const SignUp = () => {
                 </section>
                 <form className="form" onSubmit={handleSubmit}>
                     <h2>Create An Account</h2>
+                    {alert.show && (
+                        <Alert
+                            removeAlert={showAlert}
+                            {...alert}
+                            submitting={submitting}
+                        />
+                    )}
                     {displaySignUpSection()}
                 </form>
                 <div className="form__other">

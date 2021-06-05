@@ -674,6 +674,11 @@ nav {
   background-color: transparent;
 }
 
+button:disabled {
+  cursor: not-allowed;
+  background-color: transparent !important;
+}
+
 .home {
   text-align: center;
   margin-top: 4rem;
@@ -1115,15 +1120,15 @@ section[data-sec="media"] {
   max-width: 27rem;
   margin-right: auto;
   margin-left: auto;
-  -webkit-box-shadow: 0.3rem 0.3rem 0.4rem rgba(249, 249, 250, 0.1), -0.3rem -0.3rem 0.4rem rgba(249, 249, 250, 0.1);
-          box-shadow: 0.3rem 0.3rem 0.4rem rgba(249, 249, 250, 0.1), -0.3rem -0.3rem 0.4rem rgba(249, 249, 250, 0.1);
+  -webkit-box-shadow: 0.1rem 0.1rem 0.4rem 0.1rem rgba(249, 250, 249, 0.3), -0.1rem -0.1rem 0.4rem 0.1rem rgba(249, 250, 249, 0.3);
+          box-shadow: 0.1rem 0.1rem 0.4rem 0.1rem rgba(249, 250, 249, 0.3), -0.1rem -0.1rem 0.4rem 0.1rem rgba(249, 250, 249, 0.3);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 .media:hover {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  -webkit-box-shadow: 0.1rem 0.1rem 0.4rem 0.1rem var(--green-3), -0.1rem -0.1rem 0.4rem 0.1rem var(--coral-1);
+          box-shadow: 0.1rem 0.1rem 0.4rem 0.1rem var(--green-3), -0.1rem -0.1rem 0.4rem 0.1rem var(--coral-1);
 }
 
 .media__link {
@@ -1778,6 +1783,8 @@ section[data-sec="media"] {
   border-radius: 0 0 0.7rem 0.7rem;
   -webkit-box-shadow: 1rem 1rem 4rem rgba(0, 0, 0, 0.2), -1rem -1rem 4rem rgba(0, 0, 0, 0.2);
           box-shadow: 1rem 1rem 4rem rgba(0, 0, 0, 0.2), -1rem -1rem 4rem rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-size: 1.6rem;
 }
 
 .alert-invalid {

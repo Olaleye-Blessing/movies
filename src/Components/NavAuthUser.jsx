@@ -1,6 +1,6 @@
 import { NavLink, useHistory } from "react-router-dom";
 import { useGlobalContext } from "../contexts/GlobalContext";
-import { fetchData } from "../utility/fetchData";
+// import { fetchData } from "../utility/fetchData";
 
 const NavAuthUser = ({ user, id }) => {
     // console.log({ user, id });

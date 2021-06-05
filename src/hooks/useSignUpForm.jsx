@@ -7,6 +7,16 @@ const useSignUpForm = (validate) => {
     let history = useHistory();
     let { authUrl } = useGlobalContext();
 
+    const [alert, setAlert] = useState({
+        show: false,
+        msg: "",
+        type: "",
+    });
+
+    const showAlert = (show = false, msg, type) => {
+        setAlert({ show, msg, type });
+    };
+
     const [values, setValues] = useState({
         firstName: "",
         lastName: "",
@@ -69,7 +79,7 @@ const useSignUpForm = (validate) => {
 
         let body = JSON.stringify(values);
 
-        console.log(body);
+        // console.log(body);
 
         const sign = async () => {
             try {
@@ -95,8 +105,8 @@ const useSignUpForm = (validate) => {
                 });
                 history.replace("/");
             } catch (error) {
-                // console.log("---------- error ------------");
-                console.warn(error);
+                // console.warn(error);
+                showAlert(true, error.message, "invalid");
             } finally {
                 setSubmitting(false);
             }
@@ -113,6 +123,8 @@ const useSignUpForm = (validate) => {
         touched,
         handleKeyDown,
         submitting,
+        alert,
+        showAlert,
     };
 };
 

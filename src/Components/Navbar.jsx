@@ -80,12 +80,12 @@ const Navbar = () => {
 
     let {
         data: user,
-        error,
-        isPending: loading,
+        // error,
+        // isPending: loading,
     } = useFetch(`${authUrl}/authentication/isLogin`);
 
     const checkUserIsLoggedIn = () => {
-        console.log("loggedOut.....");
+        // console.log("loggedOut.....");
         return user.user ? <NavAuthUser {...user} /> : <NavAuthButtons />;
     };
 
