@@ -10,7 +10,7 @@ const GlobalProvider = ({ children }) => {
     let authUrl =
         process.env.NODE_ENV === "development"
             ? "http://127.0.0.1:7000"
-            : "https://wahala-movie.herokuapp.com/";
+            : "https://wahala-movie.herokuapp.com";
     const [searchQuery, setSearchQuery] = useState("");
 
     return (
